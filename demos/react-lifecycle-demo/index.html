@@ -42,11 +42,12 @@
       } else if (this.state.error !== null) {
         return <span>Error: {this.state.error}</span>;
       } else {
-        /* 你的代码填入这里 */
+      var items=this.state.data.items;
+      var results=items.map(item=><li>{item.name}</li>);
         return (
           <div>
             <p>API 数据获取成功</p>
-            <p>改写代码，将结果显示在这里</p>
+            <div><ul>{results}</ul></div>
           </div>
         );
       }

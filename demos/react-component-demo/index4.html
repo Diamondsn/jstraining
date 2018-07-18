@@ -13,19 +13,23 @@
     constructor(...args) {
       super(...args);
       this.state = {
-        text: 'World'
+        text: 'World',
+        count:0
       };
     }
 
     handleClick() {
       this.setState({
-        text: 'Clicked'
+        text: 'Clicked',
+        count:++this.state.count
       });
     }
 
     render() {
+      let newcount=this.state.count===0?"":this.state.count;
+      console.log(this.state.count);
       return <h1 onClick={this.handleClick.bind(this)}>
-        {'Hello ' + this.state.text}
+        {'Hello ' + this.state.text+newcount}
       </h1>;
     }
   };
